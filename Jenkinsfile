@@ -2,19 +2,14 @@ pipeline {
   agent any
   stages {
     stage('Buzz Buzz') {
-      parallel {
-        stage('Buzz Buzz') {
-          steps {
-            echo 'Bees Buzz!'
-          }
-        }
+      steps {
+        sh './jenkins/build.sh'
+      }
+    }
 
-        stage('error') {
-          steps {
-            echo 'Bees Buzz!!!'
-          }
-        }
-
+    stage('Bees Buzz Test') {
+      steps {
+        sh './jenkins/test-all.sh'
       }
     }
 
