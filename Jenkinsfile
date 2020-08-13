@@ -9,9 +9,9 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
-            echo 'Bees Buzz!'
+            echo 'Bees Buzz!!!'
           }
         }
 
